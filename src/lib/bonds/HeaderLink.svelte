@@ -17,6 +17,6 @@
 			fontWeight: isActive ? '$black' : null,
 		}}
 	>
-		{label}
+		<slot />
 	</Text>
 </Link>
