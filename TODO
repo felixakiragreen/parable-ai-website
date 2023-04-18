@@ -1,12 +1,19 @@
 To do:
    [x] Set up repo with the usual template
-   [ ] Quickly explore getting markdown working
+   [x] Quickly explore getting markdown working
    [ ] Add all the text content from the Google doc
    
 Styling:
    [ ] Header
    [ ] Footer
    [ ] Mobile
+   [ ] Make proper color scheme from given colors
+      HEX: 130B0E
+      HEX: B61515
+      HEX: 74252C
+      HEX: 640848
+      HEX: 759E9F
+      HEX: E1BB5D
 
 Waiting:
    [ ] SVG logo
