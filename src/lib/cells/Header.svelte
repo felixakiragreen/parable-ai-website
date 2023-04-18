@@ -4,6 +4,8 @@
 	import { Image } from '@/lib/atoms'
 	import { Content, Inline, Text, Link, HeaderLink } from '@/lib/bonds'
 
+	import logo from '@/assets/fakelogo.svg'
+
 	const ss = stitch({
 		position: 'absolute',
 		// '@md': {
@@ -26,17 +28,29 @@
 	<Content
 		css={{
 			// bg: '$grey-500',
-			p: '$8',
+			p: '$4',
 			// opacity: '0.5',
 		}}
 	>
 		<div class="bg" />
-		<Inline align="between">
+		<Inline align="between" alignV="center">
 			<Inline>
-				<Text look="heading">Parable</Text>
-				<Text>Do more with AI</Text>
+				<!-- <Text look="heading">Parable</Text>
+				<Text>Do more with AI</Text> -->
+				<Image
+					url={logo}
+					css={{
+						width: '160px',
+						// height: '120px',
+					}}
+				/>
 			</Inline>
-			<Inline gap="md">
+			<Inline
+				gap="md"
+				css={{
+					height: '100%',
+				}}
+			>
 				<HeaderLink url="/#why">Why</HeaderLink>
 				<HeaderLink url="/#what">What</HeaderLink>
 				<HeaderLink url="/#who">Who</HeaderLink>
