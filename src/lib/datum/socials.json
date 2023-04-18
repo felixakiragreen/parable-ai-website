@@ -1,0 +1,30 @@
+{
+	"twitter": {
+		"url": "https://twitter.com/parable_ai",
+		"username": "@parable_ai"
+	},
+	"facebook": {
+		"url": "https://www.facebook.com/parable_ai",
+		"username": "parable_ai"
+	},
+	"tiktok": {
+		"url": "https://www.tiktok.com/@parable_ai",
+		"username": "@parable_ai"
+	},
+	"instagram": {
+		"url": "https://www.instagram.com/parable_ai",
+		"username": "@parable_ai"
+	},
+	"youtube": {
+		"url": "https://www.youtube.com/channel/UCZ5Z5Z5Z5Z5Z5Z5Z5Z5Z5Z5",
+		"username": "Parable AI"
+	},
+	"linkedin": {
+		"url": "https://www.linkedin.com/company/parable-ai",
+		"username": "Parable AI"
+	},
+	"email": {
+		"url": "mailto:email@parable.ai",
+		"username": "email@parable.ai"
+	}
+}
