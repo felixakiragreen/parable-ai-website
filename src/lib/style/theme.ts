@@ -177,26 +177,29 @@ const color = {
 // 	depthOut: '$grey300',
 // }
 
-// const darkThemeColors = {
-// 	// THEME dependent tokens
-// 	//
-// 	background: '$grey900',
-// 	foreground: '$grey100',
-// 	//
-// 	faint: '$grey800',
-// 	faded: '$grey700',
-// 	jaded: '$grey600',
-// 	muted: '$grey500',
-// 	dusky: '$grey300',
-// 	//
-// 	highlight: '$green300',
-// 	lowlight: '$blue300',
-// 	//
-// 	depthIn: '$grey800',
-// 	depthOut: '$grey700',
-// 	// depthIn: rgba(color.white, 5),
-// 	// depthOut: rgba(color.white, 15),
-// }
+const darkThemeColors = {
+	// THEME dependent tokens
+	//
+	// background: '$grey-950',
+	// foreground: '$grey-50',
+
+	background: '$grey-50',
+	foreground: '$grey-950',
+	//
+	faint: '$grey-800',
+	faded: '$grey-700',
+	jaded: '$grey-600',
+	muted: '$grey-500',
+	dusky: '$grey-300',
+	//
+	highlight: '$green-300',
+	lowlight: '$blue-300',
+	//
+	depthIn: '$grey-800',
+	depthOut: '$grey-700',
+	// depthIn: rgba(color.white, 5),
+	// depthOut: rgba(color.white, 15),
+}
 
 export const colors = {
 	...color,
@@ -209,11 +212,11 @@ export const colors = {
 	blackA75: rgba(color.black, 75),
 
 	//
-	primary: '$green400',
-	primaryHover: '$green300',
-	primaryFocus: '$green600',
-	primaryFaded: '$green800',
-	primaryText: '$green900',
+	primary: '$purple-700',
+	primaryHover: '$purple-600',
+	primaryFocus: '$purple-500',
+	primaryFaded: '$purple-300',
+	primaryText: '$purple-50',
 
 	// experiments
 	// green200A50: rgba(color.green200, 50),
@@ -222,7 +225,7 @@ export const colors = {
 	//
 
 	//
-	// ...darkThemeColors,
+	...darkThemeColors,
 }
 
 const space = {
@@ -421,7 +424,7 @@ export const tokens = {
 		lg: '1.75rem',
 		xl: '2rem',
 		'2xl': '2.25rem',
-		'3xl': '2.5rem;',
+		'3xl': '2.5rem',
 		'4xl': '2.75rem',
 		'5xl': '1',
 		'6xl': '1',
@@ -441,14 +444,30 @@ export const tokens = {
 	},
 	borderStyles: {},
 	radii: {
-		none: '0px',
-		sm: '0.125rem',
-		base: '0.25rem',
+		// no: '0px',
+		// xs: '0.125rem',
+		// sm: '0.25rem',
+		// md: '0.375rem',
+		// lg: '0.5rem',
+		// xl: '0.75rem',
+		// '2xl': '1rem',
+		// '3xl': '1.5rem',
+		// full: '9999px',
+		no: '0px',
+		xs: '0.125rem',
+		sm: '0.25rem',
+		// base: '0.375rem',
 		md: '0.375rem',
 		lg: '0.5rem',
 		xl: '0.75rem',
 		'2xl': '1rem',
-		'3xl': '1.5rem',
+		'3xl': '1.25rem',
+		'4xl': '1.5rem',
+		'5xl': '1.75rem',
+		'6xl': '2rem',
+		'7xl': '2.5rem',
+		'8xl': '3rem',
+		'9xl': '4rem',
 		full: '9999px',
 	},
 	shadows: {
