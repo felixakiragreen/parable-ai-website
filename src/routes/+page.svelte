@@ -12,6 +12,9 @@
 	// import { Image } from '@/lib/atoms'
 
 	import forge from '@/assets/forge.jpg'
+	import coal from '@/assets/coal.jpg'
+	import logo from '@/assets/fakelogo.svg'
+	import brush from '@/assets/fakebrush.svg'
 </script>
 
 <Stack>
@@ -19,14 +22,10 @@
 
 	<Box
 		css={{
-			// background: `linear-gradient(
-			// 	to right,
-			// 	$grey-50 0%,
-			// 	$grey-50 48%,
-			// 	$grey-950 52%,
-			// 	$grey-950 100%
-			// )`,
-			// bg: '$grey-500',
+			backgroundImage: `url(${forge})`,
+			backgroundRepeat: 'no-repeat',
+			backgroundSize: 'contain',
+			backgroundPosition: 'right top',
 		}}
 	>
 		<Inline
@@ -41,29 +40,44 @@
 				align="center"
 				alignV="center"
 				css={{
-					// flex: 1,
-					bg: '$grey-50',
+					background: `linear-gradient(
+						to right,
+						hsla(0, 0%, 100%, 1) 0%,
+						hsla(0, 0%, 100%, 1) 50%,
+						hsla(0, 0%, 100%, 0.8) 100%
+					)`,
 				}}
 			>
-				<Text look="heading">Parable</Text>
-
-				<Text look="body">Do more with AI</Text>
+				<Image
+					url={logo}
+					css={{
+						height: '120px',
+					}}
+				/>
 			</Stack>
 
 			<Stack
 				align="center"
 				alignV="center"
+				gap="lg"
 				css={{
-					backgroundImage: `url(${forge})`,
-					backgroundRepeat: 'no-repeat',
-					backgroundSize: 'cover',
-					backgroundPosition: '70%',
 					color: '$grey-50',
 				}}
 			>
-				<Text look="heading">Thing Forge</Text>
+				<Text
+					css={{
+						fontSize: '$6xl',
+						fontWeight: '$black',
+					}}>Thing Forge</Text
+				>
 
-				<Text look="body">What do you want to make?</Text>
+				<Text
+					css={{
+						fontSize: '$2xl',
+						fontWeight: '$thin',
+						fontStyle: 'italic',
+					}}>What do you want to make?</Text
+				>
 			</Stack>
 		</Inline>
 	</Box>
@@ -72,13 +86,10 @@
 
 	<Box
 		css={{
-			background: `linear-gradient(
-				to left,
-				$grey-50 0%,
-				$grey-50 48%,
-				$grey-950 52%,
-				$grey-950 100%
-			)`,
+			backgroundColor: '$grey-50',
+			backgroundImage: `url(${brush})`,
+			backgroundRepeat: 'no-repeat',
+			backgroundPosition: '-300% top',
 		}}
 	>
 		<Inline
@@ -99,7 +110,7 @@
 				<Stack
 					gap="lg"
 					css={{
-						p: '$12',
+						p: '$24',
 					}}
 				>
 					<Text look="heading">About Parable</Text>
@@ -117,7 +128,7 @@
 				<Stack
 					gap="lg"
 					css={{
-						p: '$12',
+						p: '$24',
 					}}
 				>
 					<Text look="heading">What does Thing Forge do?</Text>
@@ -137,13 +148,10 @@
 
 	<Box
 		css={{
-			background: `linear-gradient(
-				to right,
-				$grey-50 0%,
-				$grey-50 48%,
-				$grey-950 52%,
-				$grey-950 100%
-			)`,
+			backgroundImage: `url(${coal})`,
+			backgroundRepeat: 'no-repeat',
+			backgroundSize: 'cover',
+			backgroundPosition: 'right top',
 		}}
 	>
 		<Inline
@@ -159,7 +167,12 @@
 				alignV="center"
 				gap="lg"
 				css={{
-					flex: 1,
+					background: `linear-gradient(
+						to right,
+						hsla(0, 0%, 100%, 0.9) 0%,
+						hsla(0, 0%, 100%, 0.7) 90%,
+						hsla(0, 0%, 100%, 0.0) 100%
+					)`,
 				}}
 			>
 				<Text look="heading">Parable News</Text>
@@ -175,7 +188,12 @@
 				gap="lg"
 				css={{
 					color: '$grey-50',
-					flex: 1,
+					background: `linear-gradient(
+						to right,
+						hsla(0, 0%, 0%, 0.0) 0%,
+						hsla(0, 0%, 0%, 0.3) 10%,
+						hsla(0, 0%, 0%, 0.6) 100%
+					)`,
 				}}
 			>
 				<Text look="heading">Alpha Details</Text>
