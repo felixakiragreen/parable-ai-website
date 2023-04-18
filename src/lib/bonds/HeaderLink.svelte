@@ -13,8 +13,10 @@
 	<Text
 		css={{
 			//
-			color: isActive ? '$primary' : undefined,
-			fontWeight: isActive ? '$black' : null,
+			// color: '$primary',
+			fontWeight: '$bold',
+			// color: isActive ? '$primary' : undefined,
+			// fontWeight: isActive ? '$black' : null,
 		}}
 	>
 		<slot />
