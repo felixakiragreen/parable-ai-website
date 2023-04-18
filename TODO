@@ -7,13 +7,13 @@ Styling:
    [ ] Header
    [ ] Footer
    [ ] Mobile
-   [ ] Make proper color scheme from given colors
-      HEX: 130B0E
-      HEX: B61515
-      HEX: 74252C
-      HEX: 640848
-      HEX: 759E9F
-      HEX: E1BB5D
+   [x] Make proper color scheme from given colors
+      hex: 130b0e
+      hex: b61515
+      hex: 74252c
+      hex: 640848
+      hex: 759e9f
+      hex: e1bb5d
 
 Waiting:
    [ ] SVG logo
