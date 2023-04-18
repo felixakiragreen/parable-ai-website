@@ -1,6 +1,14 @@
 <script lang="ts">
 	import { Box, Span } from '@/lib/atoms'
-	import { Content, Stack, Inline, Text, Break, Grid } from '@/lib/bonds'
+	import {
+		Content,
+		Stack,
+		Inline,
+		Text,
+		Break,
+		Grid,
+		Button,
+	} from '@/lib/bonds'
 </script>
 
 <Stack>
@@ -81,21 +89,26 @@
 					alignV="center"
 					css={{
 						color: '$grey-50',
-						flex: 1,
 					}}
 				>
-					<Text look="heading">About Parable</Text>
+					<Stack
+						gap="lg"
+						css={{
+							p: '$12',
+						}}
+					>
+						<Text look="heading">About Parable</Text>
 
-					<!-- <Text look="body">Do more with AI</Text> -->
+						<Text look="body"
+							>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum
+							repellendus quod neque temporibus ab rerum doloribus vitae
+							explicabo magnam assumenda debitis eaque, nesciunt quis repellat
+							perferendis veritatis est tempore non.</Text
+						>
+					</Stack>
 				</Stack>
 
-				<Stack
-					align="center"
-					alignV="center"
-					css={{
-						flex: 1,
-					}}
-				>
+				<Stack align="center" alignV="center">
 					<Stack
 						gap="lg"
 						css={{
@@ -142,18 +155,22 @@
 				<Stack
 					align="center"
 					alignV="center"
+					gap="lg"
 					css={{
 						flex: 1,
 					}}
 				>
 					<Text look="heading">Parable News</Text>
 
-					<Text look="body">Contact Parable</Text>
+					<Button look="magic" size="xl"
+						><Text css={{ fontWeight: '$bold' }}>Contact Parable</Text></Button
+					>
 				</Stack>
 
 				<Stack
 					align="center"
 					alignV="center"
+					gap="lg"
 					css={{
 						color: '$grey-50',
 						flex: 1,
@@ -161,7 +178,10 @@
 				>
 					<Text look="heading">Alpha Details</Text>
 
-					<Text look="body">Register for the Alpha</Text>
+					<Button look="magic" size="xl"
+						><Text css={{ fontWeight: '$bold' }}>Register for the Alpha</Text
+						></Button
+					>
 				</Stack>
 			</Inline>
 		</Content>
