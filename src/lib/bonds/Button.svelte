@@ -8,7 +8,7 @@
 	export let css: CSS = null
 	export let look = 'main'
 	export let size = 'md'
-	export let rounding = 'no'
+	export let rounding = 'default'
 	export let disabled = null
 
 	// specials
@@ -26,10 +26,10 @@
 		// DISABLED STYLE
 		'&:disabled': {
 			cursor: 'not-allowed',
-			bg: '$grey300',
+			bg: '$grey-300',
 		},
 		'&:disabled:hover': {
-			bg: '$grey400',
+			bg: '$grey-400',
 			// color: '$grey400',
 		},
 
@@ -42,6 +42,19 @@
 		$$EdgeHover: '$colors$clear',
 		$$TextHover: '$colors$primaryText',
 		$$RingHover: '$colors$primaryFocus',
+
+		// $$CornerNo: '$radii$no',
+		// $$CornerMd: '$radii$md',
+		// $$CornerFull: '$radii$full',
+		// no: {
+		// 	borderRadius: '$none',
+		// },
+		// md: {
+		// 	borderRadius: '$base',
+		// },
+		// full: {
+		// 	borderRadius: '$full',
+		// },
 
 		// $$BackFocus
 		// $$EdgeFocus: '$colors$lowlight',
@@ -60,14 +73,36 @@
 		'&:active': {},
 		'&:focus': {
 			outline: 'none',
-			boxShadow: [
-				//
-				'0 0 0px 3px $colors$background',
-				'0 0 0px 6px $$Ring',
-			].join(', '),
+			// boxShadow: [
+			// 	//
+			// 	'0 0 0px 3px $colors$background',
+			// 	'0 0 0px 6px $$Ring',
+			// ].join(', '),
 		},
 
+		// borderRadius: '$$Corner',
+
 		variants: {
+			rounding: {
+				no: {
+					// borderRadius: '$none',
+					// $$Corner: '$radii$no',
+					$$Corner: '$radii$no',
+					borderRadius: '$$Corner',
+				},
+				md: {
+					// $$Corner: '$$CornerMd',
+					$$Corner: '$radii$md',
+					borderRadius: '$$Corner',
+					// borderRadius: '$base',
+				},
+				full: {
+					// $$Corner: '$$CornerFull',
+					$$Corner: '$radii$full',
+					borderRadius: '$$Corner',
+					// borderRadius: '$full',
+				},
+			},
 			look: {
 				main: {
 					textTransform: 'uppercase',
@@ -139,7 +174,7 @@
 				},
 				skeu: {
 					bg: '$colors$primary',
-					linearGradient: 'to bottom, $colors$clear, $colors$green500',
+					linearGradient: 'to bottom, $colors$clear, $colors$green-500',
 					// boxShadow: '$hard',
 					boxShadow: [
 						// '0 0 2px 3px $colors$depthIn',
@@ -157,8 +192,8 @@
 					// transform: 'perspective(500px) translate3d(3px, 3px, 100px)',
 					'&:focus': {
 						boxShadow: [
-							'0 0 2px 3px $colors$green300',
-							'0 0 0px 6px $colors$green400',
+							'0 0 2px 3px $colors$green-300',
+							'0 0 0px 6px $colors$green-400',
 							'inset 0 0 0px 1px $colors$blackA50',
 							'inset 0 1px 0px 1px $colors$whiteA75',
 						].join(', '),
@@ -168,7 +203,7 @@
 					},
 					'&:active': {
 						// bg: '$$Back',
-						linearGradient: 'to bottom, $colors$green500, $colors$green400',
+						linearGradient: 'to bottom, $colors$green-500, $colors$green-400',
 						boxShadow: [
 							// '0 -1px 2px 3px $colors$depthIn',
 							// '0 -1px 0px 6px $colors$depthOut',
@@ -179,45 +214,106 @@
 						transform: 'translate(0, 1px)',
 					},
 				},
+				magic: {
+					$$Corner: '$radii$2xl',
+					position: 'relative',
+					borderRadius: '$$Corner',
+					bg: '$colors$clear',
+					p: '$0',
+					outlineOffset: '4px',
+
+					// linearGradient: 'to bottom, $colors$clear, $colors$green-500',
+					'.front': {
+						display: 'block',
+						bg: '$$Back',
+						borderRadius: '$$Corner',
+						transform: 'translateY(-4px)',
+						willChange: 'transform',
+						transition: 'transform 600ms cubic-bezier(.3, .7, .4, 1)',
+					},
+
+					'&:hover': {
+						bg: '$colors$purple-600',
+
+						'.front': {
+							transition: 'transform 250ms cubic-bezier(.3, .7, .4, 1.5)',
+							transform: 'translateY(-6px)',
+						},
+					},
+
+					'&:active': {
+						'.front': {
+							transform: 'translateY(-2px)',
+						},
+					},
+
+					'.shadow': {
+						position: 'absolute',
+						top: '0',
+						left: '0',
+						width: '100%',
+						height: '100%',
+						borderRadius: '$$Corner',
+						background: 'hsl(0deg 0% 0% / 0.25)',
+						transform: 'translateY(2px)',
+						filter: 'blur(2px)',
+					},
+
+					'.edge': {
+						position: 'absolute',
+						top: '0',
+						left: '0',
+						width: '100%',
+						height: '100%',
+						borderRadius: '$$Corner',
+						background: `linear-gradient(
+							to left,
+							$colors$purple-950 0%,
+							$colors$purple-900 8%,
+							$colors$purple-900 92%,
+							$colors$purple-950 100%
+						)`,
+					},
+				},
 			},
 			size: {
 				xs: {
-					px: '$1',
-					py: '$0_5',
-					text: '$xs',
+					'.front': {
+						px: '$1',
+						py: '$0_5',
+						text: '$xs',
+					},
 				},
 				sm: {
-					px: '$2',
-					py: '$1',
-					text: '$sm',
+					'.front': {
+						px: '$2',
+						py: '$1',
+						text: '$sm',
+					},
 				},
 				md: {
-					px: '$3',
-					py: '$1_5',
-					text: '$md',
+					'.front': {
+						px: '$3',
+						py: '$1_5',
+						text: '$md',
+					},
 				},
 				lg: {
-					px: '$4',
-					py: '$2',
-					text: '$lg',
+					'.front': {
+						px: '$4',
+						py: '$2',
+						text: '$lg',
+					},
 				},
 				xl: {
-					px: '$6',
-					py: '$3',
-					text: '$xl',
+					'.front': {
+						px: '$6',
+						py: '$3',
+						text: '$xl',
+					},
 				},
 			},
-			rounding: {
-				no: {
-					borderRadius: '$none',
-				},
-				md: {
-					borderRadius: '$base',
-				},
-				full: {
-					borderRadius: '$full',
-				},
-			},
+
 			//
 			// TODO: make colorful work with holo
 			colorful: {
@@ -272,5 +368,9 @@
 	{disabled}
 	on:click
 >
-	<slot />
+	<span class="shadow" />
+	<span class="edge" />
+	<span class="front">
+		<slot />
+	</span>
 </Button>
