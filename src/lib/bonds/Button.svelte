@@ -135,7 +135,7 @@
 				clean: {
 					$$Back: '$colors$clear',
 					$$Text: '$colors$primary',
-					$$BackHover: '$colors$primaryFaded',
+					$$BackHover: '$colors$clear',
 					$$TextHover: '$colors$primaryHover',
 
 					// color: '$$Back',
