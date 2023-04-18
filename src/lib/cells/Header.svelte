@@ -12,7 +12,7 @@
 		top: 0,
 		width: '100%',
 		// bg: '$grey-500',
-		bg: 'hsla(0, 0%, 100%, 0.12)',
+		bg: 'hsla(0, 0%, 100%, 0.7)',
 		color: '$foreground',
 		zIndex: 10,
 
