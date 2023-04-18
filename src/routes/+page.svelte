@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Box, Span } from '@/lib/atoms'
+	import { Box, Span, Image } from '@/lib/atoms'
 	import {
 		Content,
 		Stack,
@@ -9,6 +9,9 @@
 		Grid,
 		Button,
 	} from '@/lib/bonds'
+	// import { Image } from '@/lib/atoms'
+
+	import forge from '@/assets/forge.jpg'
 </script>
 
 <Stack>
@@ -16,50 +19,56 @@
 
 	<Box
 		css={{
-			background: `linear-gradient(
-				to right,
-				$grey-50 0%,
-				$grey-50 48%,
-				$grey-950 52%,
-				$grey-950 100%
-			)`,
+			// background: `linear-gradient(
+			// 	to right,
+			// 	$grey-50 0%,
+			// 	$grey-50 48%,
+			// 	$grey-950 52%,
+			// 	$grey-950 100%
+			// )`,
+			// bg: '$grey-500',
 		}}
 	>
-		<Content>
-			<Inline
+		<Inline
+			css={{
+				minHeight: '100vh',
+				'> div': {
+					flex: 1,
+				},
+			}}
+		>
+			<Stack
+				align="center"
+				alignV="center"
 				css={{
-					minHeight: '100vh',
-					'> div': {
-						flex: 1,
-					},
+					// flex: 1,
+					bg: '$grey-50',
 				}}
 			>
-				<Stack
-					align="center"
-					alignV="center"
-					css={{
-						flex: 1,
-					}}
-				>
-					<Text look="heading">Parable</Text>
+				<Text look="heading">Parable</Text>
 
-					<Text look="body">Do more with AI</Text>
-				</Stack>
+				<Text look="body">Do more with AI</Text>
+			</Stack>
 
-				<Stack
-					align="center"
-					alignV="center"
-					css={{
-						color: '$grey-50',
-						flex: 1,
-					}}
-				>
-					<Text look="heading">Thing Forge</Text>
+			<Stack
+				align="center"
+				alignV="center"
+				css={{
+					// bg: '$grey-500',
+					backgroundImage: `url(${forge})`,
+					backgroundRepeat: 'no-repeat',
+					backgroundSize: 'cover',
+					backgroundPosition: '70%',
+					color: '$grey-50',
+					// flex: 1,
+				}}
+			>
+				<!-- <Image url={forge} /> -->
+				<Text look="heading">Thing Forge</Text>
 
-					<Text look="body">What do you want to make?</Text>
-				</Stack>
-			</Inline>
-		</Content>
+				<Text look="body">What do you want to make?</Text>
+			</Stack>
+		</Inline>
 	</Box>
 
 	<!-- 2 -->
