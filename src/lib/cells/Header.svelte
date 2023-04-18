@@ -6,11 +6,11 @@
 
 	const ss = stitch({
 		position: 'relative',
-		'@md': {
-			position: 'sticky',
-		},
+		// '@md': {
+		// 	position: 'sticky',
+		// },
 		top: '$0',
-		bg: '$grey800',
+		bg: '$grey-500',
 		color: '$foreground',
 		zIndex: 10,
 	})
@@ -19,9 +19,13 @@
 <header class={ss()}>
 	<Content
 		css={{
-			bg: '$orange800',
+			bg: '$grey-500',
+			p: '$4',
 		}}
 	>
-		<Text>Header</Text>
+		<Inline align="between">
+			<Text>Parable</Text>
+			<Text>Do more with AI</Text>
+		</Inline>
 	</Content>
 </header>
