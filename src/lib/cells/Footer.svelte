@@ -11,7 +11,7 @@
 		// 	position: 'sticky',
 		// },
 		// top: '$0',
-		// bg: '$grey800',
+		bg: '$grey-500',
 		// color: '$foreground',
 	})
 </script>
@@ -19,9 +19,18 @@
 <footer class={ss()}>
 	<Content
 		css={{
-			bg: '$orange800',
+			// bg: '$grey-400',
+			p: '$4',
 		}}
 	>
-		<Text>Footer</Text>
+		<Inline align="between">
+			<Inline gap="sm">
+				<Text>Twitter</Text>
+				<Text>Instagram</Text>
+				<Text>Github</Text>
+			</Inline>
+
+			<Text>Contact</Text>
+		</Inline>
 	</Content>
 </footer>
