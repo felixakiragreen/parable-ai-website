@@ -6,7 +6,8 @@
 
 	export let url
 	export let newTab = true
-	export let color
+	export let hex
+	export let hue
 	export let path
 	export let transform
 
@@ -19,8 +20,8 @@
 
 <Link {url} {newTab} look="clean">
 	<IconSocial
-		brandHue={color.hue}
-		brandExact={color.exact}
+		brandHue={hue}
+		brandExact={hex}
 		{...{ symbol, ground, hoverSymbol, hoverGround }}
 		{path}
 		{transform}
