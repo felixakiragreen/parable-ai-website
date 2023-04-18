@@ -54,16 +54,13 @@
 				align="center"
 				alignV="center"
 				css={{
-					// bg: '$grey-500',
 					backgroundImage: `url(${forge})`,
 					backgroundRepeat: 'no-repeat',
 					backgroundSize: 'cover',
 					backgroundPosition: '70%',
 					color: '$grey-50',
-					// flex: 1,
 				}}
 			>
-				<!-- <Image url={forge} /> -->
 				<Text look="heading">Thing Forge</Text>
 
 				<Text look="body">What do you want to make?</Text>
@@ -84,59 +81,56 @@
 			)`,
 		}}
 	>
-		<Content>
-			<Inline
+		<Inline
+			css={{
+				minHeight: '100vh',
+				'> div': {
+					flex: 1,
+				},
+			}}
+		>
+			<Stack
+				align="center"
+				alignV="center"
 				css={{
-					minHeight: '100vh',
-					'> div': {
-						flex: 1,
-					},
+					color: '$grey-50',
 				}}
 			>
 				<Stack
-					align="center"
-					alignV="center"
+					gap="lg"
 					css={{
-						color: '$grey-50',
+						p: '$12',
 					}}
 				>
-					<Stack
-						gap="lg"
-						css={{
-							p: '$12',
-						}}
-					>
-						<Text look="heading">About Parable</Text>
+					<Text look="heading">About Parable</Text>
 
-						<Text look="body"
-							>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum
-							repellendus quod neque temporibus ab rerum doloribus vitae
-							explicabo magnam assumenda debitis eaque, nesciunt quis repellat
-							perferendis veritatis est tempore non.</Text
-						>
-					</Stack>
-				</Stack>
-
-				<Stack align="center" alignV="center">
-					<Stack
-						gap="lg"
-						css={{
-							p: '$12',
-						}}
+					<Text look="body"
+						>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum
+						repellendus quod neque temporibus ab rerum doloribus vitae explicabo
+						magnam assumenda debitis eaque, nesciunt quis repellat perferendis
+						veritatis est tempore non.</Text
 					>
-						<Text look="heading">What does Thing Forge do?</Text>
-						<Text look="body"
-							>Task Forge is a universal AI interface for makers. Unlike
-							single-model AI interfaces, Parable connects to any public AI
-							model or work environment, enabling users to bring the familiarity
-							and skill they've developed on their Parable interface to any
-							model, flattening the learning curve and maximizing their
-							productivity.</Text
-						>
-					</Stack>
 				</Stack>
-			</Inline>
-		</Content>
+			</Stack>
+
+			<Stack align="center" alignV="center">
+				<Stack
+					gap="lg"
+					css={{
+						p: '$12',
+					}}
+				>
+					<Text look="heading">What does Thing Forge do?</Text>
+					<Text look="body"
+						>Task Forge is a universal AI interface for makers. Unlike
+						single-model AI interfaces, Parable connects to any public AI model
+						or work environment, enabling users to bring the familiarity and
+						skill they've developed on their Parable interface to any model,
+						flattening the learning curve and maximizing their productivity.</Text
+					>
+				</Stack>
+			</Stack>
+		</Inline>
 	</Box>
 
 	<!-- 3 -->
@@ -152,48 +146,46 @@
 			)`,
 		}}
 	>
-		<Content>
-			<Inline
+		<Inline
+			css={{
+				minHeight: '100vh',
+				'> div': {
+					flex: 1,
+				},
+			}}
+		>
+			<Stack
+				align="center"
+				alignV="center"
+				gap="lg"
 				css={{
-					minHeight: '100vh',
-					'> div': {
-						flex: 1,
-					},
+					flex: 1,
 				}}
 			>
-				<Stack
-					align="center"
-					alignV="center"
-					gap="lg"
-					css={{
-						flex: 1,
-					}}
+				<Text look="heading">Parable News</Text>
+
+				<Button look="magic" size="xl"
+					><Text css={{ fontWeight: '$bold' }}>Contact Parable</Text></Button
 				>
-					<Text look="heading">Parable News</Text>
+			</Stack>
 
-					<Button look="magic" size="xl"
-						><Text css={{ fontWeight: '$bold' }}>Contact Parable</Text></Button
-					>
-				</Stack>
+			<Stack
+				align="center"
+				alignV="center"
+				gap="lg"
+				css={{
+					color: '$grey-50',
+					flex: 1,
+				}}
+			>
+				<Text look="heading">Alpha Details</Text>
 
-				<Stack
-					align="center"
-					alignV="center"
-					gap="lg"
-					css={{
-						color: '$grey-50',
-						flex: 1,
-					}}
+				<Button look="magic" size="xl"
+					><Text css={{ fontWeight: '$bold' }}>Register for the Alpha</Text
+					></Button
 				>
-					<Text look="heading">Alpha Details</Text>
-
-					<Button look="magic" size="xl"
-						><Text css={{ fontWeight: '$bold' }}>Register for the Alpha</Text
-						></Button
-					>
-				</Stack>
-			</Inline>
-		</Content>
+			</Stack>
+		</Inline>
 	</Box>
 
 	<!--  -->
