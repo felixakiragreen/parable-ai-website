@@ -1,6 +1,6 @@
 import type * as Stitches from '@stitches/core'
 
-const rgba = (hexCode: string, opacity: number) => {
+function rgba(hexCode: string, opacity: number) {
 	let hex = hexCode.replace('#', '')
 
 	if (hex.length === 3) {
@@ -14,121 +14,192 @@ const rgba = (hexCode: string, opacity: number) => {
 	return `rgba(${r},${g},${b},${opacity / 100})`
 }
 
+function convertColors(
+	input: Record<string, Record<string, string>>,
+): Record<string, string> {
+	const output: Record<string, string> = {}
+	for (const [colorName, shades] of Object.entries(input)) {
+		for (const [shade, hexCode] of Object.entries(shades)) {
+			output[`${colorName}-${shade}`] = hexCode
+		}
+	}
+	return output
+}
+
 const color = {
-	felix: '#adff2f',
 	black: '#000000',
 	white: '#ffffff',
 	clear: 'hsla(0, 0%, 0%, 0)',
-	//
-	grey900: '#0a0a09',
-	grey800: '#141411',
-	grey750: '#1d1e1a',
-	grey700: '#2a2b26',
-	grey650: '#373832',
-	grey600: '#53544c',
-	grey500: '#7f8076',
-	grey400: '#aaaba0',
-	grey300: '#d3d4c9',
-	grey200: '#ebebe2',
-	grey100: '#f5f5ef',
-	red900: '#290607',
-	red800: '#470a0d',
-	red700: '#710e15',
-	red600: '#a11420',
-	red500: '#cb1d37',
-	red400: '#ed3467',
-	red300: '#fc64a1',
-	red200: '#ffa3d6',
-	red100: '#ffecfa',
-	orange900: '#2f150d',
-	orange800: '#50240f',
-	orange700: '#75330f',
-	orange600: '#9e490c',
-	orange500: '#cb6709',
-	orange400: '#f1901d',
-	orange300: '#fcb760',
-	orange200: '#fed7a8',
-	orange100: '#fff6e9',
-	yellow900: '#371f05',
-	yellow800: '#5f3906',
-	yellow700: '#8f5c07',
-	yellow600: '#c6930b',
-	yellow500: '#f8cb1b',
-	yellow400: '#f7dd4b',
-	yellow300: '#f5ea7e',
-	yellow200: '#f3f1b0',
-	yellow100: '#f2f2de',
-	green900: '#052907',
-	green800: '#0c4a07',
-	green700: '#1e6e08',
-	green600: '#3f9608',
-	green500: '#6fbf10',
-	green400: '#a5e22c',
-	green300: '#cfed6d',
-	green200: '#e4efab',
-	green100: '#e8ead8',
-	blue900: '#001336',
-	blue800: '#002662',
-	blue700: '#013f8c',
-	blue600: '#0362b2',
-	blue500: '#0f8fd0',
-	blue400: '#38bce6',
-	blue300: '#70dbef',
-	blue200: '#a9eaf4',
-	blue100: '#e5f6f8',
-	purple900: '#120639',
-	purple800: '#271163',
-	purple700: '#442294',
-	purple600: '#643bc0',
-	purple500: '#8659e1',
-	purple400: '#9f7af2',
-	purple300: '#b29af8',
-	purple200: '#ccbdf9',
-	purple100: '#f0e6f9',
+
+	// brand
+	night: '#130b0e',
+	purple: '#640848',
+	orange: '#b61515',
+	blue: '#759e9f',
+	red: '#74252c',
+	yellow: '#e1bb5d',
+
+	// grey
+	...convertColors({
+		grey: {
+			'50': '#f8f7f7',
+			'100': '#e5e1e3',
+			'200': '#cac4c7',
+			'300': '#a99ea3',
+			'400': '#87787f',
+			'500': '#6c6066',
+			'600': '#564d51',
+			'700': '#463e42',
+			'800': '#3b3538',
+			'900': '#332e30',
+			'950': '#130c0e',
+		},
+	}),
+
+	// purple
+	...convertColors({
+		purple: {
+			'50': '#f0e0e8',
+			'100': '#e9d3de',
+			'200': '#e4bed4',
+			'300': '#d99bbe',
+			'400': '#ce6fa4',
+			'500': '#ba4089',
+			'600': '#823565',
+			'700': '#630848',
+			'800': '#491336',
+			'900': '#300d24',
+			'950': '#13010e',
+		},
+	}),
+
+	// red
+	...convertColors({
+		red: {
+			'50': '#fcf3f4',
+			'100': '#f8e7e9',
+			'200': '#f2d4d7',
+			'300': '#eab8bc',
+			'400': '#dd8d94',
+			'500': '#cf636c',
+			'600': '#c3414c',
+			'700': '#a3333d',
+			'800': '#882b33',
+			'900': '#74252b',
+			'950': '#3a1216',
+		},
+	}),
+
+	// blue
+	...convertColors({
+		blue: {
+			'50': '#f5f8f7',
+			'100': '#ddeae9',
+			'200': '#bbd4d3',
+			'300': '#91b7b7',
+			'400': '#759e9f',
+			'500': '#507a7c',
+			'600': '#3e6063',
+			'700': '#345051',
+			'800': '#2d4042',
+			'900': '#283839',
+			'950': '#141d1f',
+		},
+	}),
+
+	// yellow
+	...convertColors({
+		yellow: {
+			'50': '#fcf8ee',
+			'100': '#f6eccf',
+			'200': '#ecd89b',
+			'300': '#e1bb5d',
+			'400': '#dca943',
+			'500': '#d38c2d',
+			'600': '#bb6d24',
+			'700': '#9b5022',
+			'800': '#7f4021',
+			'900': '#69351e',
+			'950': '#3b1b0d',
+		},
+	}),
+
+	// orange
+	...convertColors({
+		orange: {
+			'50': '#edded4',
+			'100': '#f2dcce',
+			'200': '#f4dbcd',
+			'300': '#f0c6b2',
+			'400': '#e6997a',
+			'500': '#d86a46',
+			'600': '#b45631',
+			'700': '#843f1f',
+			'800': '#683118',
+			'900': '#4d1e14',
+			'950': '#160803',
+		},
+	}),
+
+	// green
+	...convertColors({
+		green: {
+			'50': '#faf6eb',
+			'100': '#f2edd4',
+			'200': '#e8e0b0',
+			'300': '#d6c980',
+			'400': '#c4b754',
+			'500': '#a89b38',
+			'600': '#897f2a',
+			'700': '#6e6826',
+			'800': '#545121',
+			'900': '#47451f',
+			'950': '#26250d',
+		},
+	}),
 }
 
-const lightThemeColors = {
-	//
-	background: '$white',
-	foreground: '$grey900',
-	//
-	faint: '$grey200',
-	faded: '$grey300',
-	jaded: '$grey400',
-	muted: '$grey500',
-	dusky: '$grey700',
-	//
-	highlight: '$green700',
-	lowlight: '$blue700',
-	//
-	depthIn: '$grey200',
-	depthOut: '$grey300',
-}
-const darkThemeColors = {
-	// THEME dependent tokens
-	//
-	background: '$grey900',
-	foreground: '$grey100',
-	//
-	faint: '$grey800',
-	faded: '$grey700',
-	jaded: '$grey600',
-	muted: '$grey500',
-	dusky: '$grey300',
-	//
-	highlight: '$green300',
-	lowlight: '$blue300',
-	//
-	depthIn: '$grey800',
-	depthOut: '$grey700',
-	// depthIn: rgba(color.white, 5),
-	// depthOut: rgba(color.white, 15),
-}
+// const lightThemeColors = {
+// 	//
+// 	background: '$white',
+// 	foreground: '$grey900',
+// 	//
+// 	faint: '$grey200',
+// 	faded: '$grey300',
+// 	jaded: '$grey400',
+// 	muted: '$grey500',
+// 	dusky: '$grey700',
+// 	//
+// 	highlight: '$green700',
+// 	lowlight: '$blue700',
+// 	//
+// 	depthIn: '$grey200',
+// 	depthOut: '$grey300',
+// }
+
+// const darkThemeColors = {
+// 	// THEME dependent tokens
+// 	//
+// 	background: '$grey900',
+// 	foreground: '$grey100',
+// 	//
+// 	faint: '$grey800',
+// 	faded: '$grey700',
+// 	jaded: '$grey600',
+// 	muted: '$grey500',
+// 	dusky: '$grey300',
+// 	//
+// 	highlight: '$green300',
+// 	lowlight: '$blue300',
+// 	//
+// 	depthIn: '$grey800',
+// 	depthOut: '$grey700',
+// 	// depthIn: rgba(color.white, 5),
+// 	// depthOut: rgba(color.white, 15),
+// }
 
 export const colors = {
 	...color,
-	//
-	felix50: rgba(color.felix, 50),
 	//
 	whiteA25: rgba(color.white, 25),
 	whiteA50: rgba(color.white, 50),
@@ -145,13 +216,13 @@ export const colors = {
 	primaryText: '$green900',
 
 	// experiments
-	green200A50: rgba(color.green200, 50),
-	green300A50: rgba(color.green300, 50),
-	green400A50: rgba(color.green400, 50),
+	// green200A50: rgba(color.green200, 50),
+	// green300A50: rgba(color.green300, 50),
+	// green400A50: rgba(color.green400, 50),
 	//
 
 	//
-	...darkThemeColors,
+	// ...darkThemeColors,
 }
 
 const space = {
