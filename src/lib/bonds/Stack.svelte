@@ -8,8 +8,8 @@
 	export let css: CSS = null
 	export let pad = null
 	export let gap = null
-	export let align = null
-	export let alignV = null
+	export let align: string | null = null
+	export let alignV: string | null = null
 
 	const ss = stitch({
 		display: 'flex',
