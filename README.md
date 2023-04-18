@@ -1,21 +1,13 @@
-# opinionated frontend stack
+# Parable AI website
 
-We're using only the best:
+## How to run
 
-## core:
+1. Clone the directory
+2. Install node modules
+3. Run `pnpm dev`
 
-- [sveltekit 1.0](https://kit.svelte.dev/docs) (framework)
-- [nanostores](https://github.com/nanostores/nanostores) (state management)
-- [stitches](https://stitches.dev/docs/installation) (design system)
+### Prereqs:
 
-## util:
-
-- [lodash-es](https://lodash.com/docs) (wrangling)
-- [date-fns](https://date-fns.org/docs/) (datetime)
-
-### TODO:
-
-- responsive images
-   [ ] vite-imagetools?
-- update to OKLCH
-   [ ] oklch.com
+- `git`
+- `node`
+- `pnpm` (or similar)
