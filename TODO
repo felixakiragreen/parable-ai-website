@@ -1,7 +1,7 @@
 To do:
    [x] Set up repo with the usual template
    [x] Quickly explore getting markdown working
-   [ ] Add all the text content from the Google doc
+   [x] Add all the text content from the Google doc
    
 Styling:
    [ ] Header
@@ -17,3 +17,7 @@ Styling:
 
 Waiting:
    [ ] SVG logo
+
+Questions:
+   [ ] what is header: "chrome"?
+   [ ] what is buffered transition between light & dark?
