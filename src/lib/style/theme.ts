@@ -192,8 +192,8 @@ const darkThemeColors = {
 	muted: '$grey-500',
 	dusky: '$grey-300',
 	//
-	highlight: '$green-300',
-	lowlight: '$blue-300',
+	highlight: '$purple-700',
+	lowlight: '$blue-400',
 	//
 	depthIn: '$grey-800',
 	depthOut: '$grey-700',
